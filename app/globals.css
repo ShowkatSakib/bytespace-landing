@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white font-body text-shuttle-950 antialiased; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-persian-800; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-[1200px] px-5; }
+  /* 120px grid used on every blue hero/CTA (white lines, 12% opacity) */
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.12) 2px, transparent 2px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.12) 2px, transparent 2px);
+    background-size: 120px 120px;
+  }
+  .btn-lime { @apply inline-flex items-center justify-center gap-2 rounded-3xl bg-lime-400 px-6 py-3 text-lg font-medium text-shuttle-950 transition hover:brightness-95; }
+  .h-display { @apply font-heading font-semibold tracking-[-0.01em] leading-[1.2]; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
